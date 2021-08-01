@@ -66,6 +66,15 @@ body {
   align-items: center;
 }
 
+.footer button {
+  width: 100px;
+  margin-left: 400px;
+}
+
+.footer button:hover {
+  cursor: pointer;
+}
+
 .likeBttn {
   color: rgba(250, 250, 250, 0.550);
 }
@@ -263,6 +272,7 @@ button {
 .commentContainer button {
   width: 30px;
   height: 30px;
+  margin-left: 10px;
 }
 
 .commentContainer button:hover {
@@ -283,6 +293,16 @@ button {
   font-size: 25px;
 }
 
+#individual .footer:hover {
+  cursor: initial;
+}
+
+/* REGISTATION */
+
+.registration {
+  margin-top: 100px;
+}
+
 /* LOGIN */
 
 .loginContainer {
@@ -294,16 +314,23 @@ button {
   padding-top: 100px;
 }
 
-.loginContainer input,
-button {
+.loginContainer input {
   width: 200px;
   height: 50px;
   border-radius: 8px;
   border: none;
   margin: 10px;
+  padding-left: 10px;
+  font-size: 20px;
 }
 
 .loginContainer button {
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px;
+  padding-left: 10px;
   background-color: #43a173;
   color: white;
 }
@@ -318,6 +345,12 @@ button {
 }
 
 /* PROFILE PAGE */
+
+.profilePageContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 .basicInfo {
   display: flex;

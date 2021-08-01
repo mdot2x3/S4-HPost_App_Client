@@ -2,12 +2,15 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function Registration() {
   const initialValues = {
     username: "",
     password: "",
   };
+
+let history = useHistory();
 
   //Form validation
   const validationSchema = Yup.object().shape({
@@ -18,11 +21,12 @@ function Registration() {
   const onSubmit = (data) => {
     axios.post("https://s4hpost-app.herokuapp.com/auth", data).then(() => {
       console.log(data);
+      history.push("/");
     });
   };
 
   return (
-    <div>
+    <div className="registration">
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
