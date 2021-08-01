@@ -29,7 +29,7 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/posts", data, {
+      .post("https://s4hpost-app.herokuapp.com/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {

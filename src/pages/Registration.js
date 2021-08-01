@@ -16,7 +16,7 @@ function Registration() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/auth", data).then(() => {
+    axios.post("https://s4hpost-app.herokuapp.com/auth", data).then(() => {
       console.log(data);
     });
   };

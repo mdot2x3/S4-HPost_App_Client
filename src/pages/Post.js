@@ -14,12 +14,12 @@ function Post() {
 
   useEffect(() => {
     //API request for leftSide data
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+    axios.get(`https://s4hpost-app.herokuapp.com/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
       //console.log(response);
     });
     //API request for rightSide data
-    axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+    axios.get(`https://s4hpost-app.herokuapp.com/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []);
@@ -28,7 +28,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        "http://localhost:3001/comments",
+        "https://s4hpost-app.herokuapp.com/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -58,7 +58,7 @@ function Post() {
   //Delete comment function
   const deleteComment = (id) => {
     axios
-      .delete(`http://localhost:3001/comments/${id}`, {
+      .delete(`https://s4hpost-app.herokuapp.com/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -73,7 +73,7 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`http://localhost:3001/posts/${id}`, {
+      .delete(`https://s4hpost-app.herokuapp.com/posts/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -85,7 +85,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Enter New Title:");
       axios.put(
-        "http://localhost:3001/posts/title",
+        "https://s4hpost-app.herokuapp.com/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -99,7 +99,7 @@ function Post() {
     } else {
       let newPostText = prompt("Enter New Text:");
       axios.put(
-        "http://localhost:3001/posts/postText",
+        "https://s4hpost-app.herokuapp.com/posts/postText",
         {
           newText: newPostText,
           id: id,
